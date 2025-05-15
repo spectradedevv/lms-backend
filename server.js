@@ -13,15 +13,10 @@ const studentCourseProgressRoutes = require("./routes/student-routes/course-prog
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
-const allowedOrigins = process.env.CLIENT_URL.split(',')
 app.use(
-  cors({
-
-    origin:allowedOrigins,
+  cors({origin:process.env.CLIENT_URL,
     methods: ["GET", "POST", "DELETE", "PUT"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-
-  })
+    allowedHeaders: ["Content-Type", "Authorization"],})
 );
 app.use(express.json());
 
