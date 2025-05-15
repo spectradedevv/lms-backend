@@ -14,8 +14,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 app.use(
-  cors({origin:"https://lms-frontend-tjjg.onrender.com/",
-    methods: ["GET", "POST", "DELETE", "PUT"],
+  cors({origin:"https://lms-frontend-tjjg.onrender.com",
+    methods: ["GET", "POST", "DELETE", "PUT","OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],})
 );
 app.use(express.json());
